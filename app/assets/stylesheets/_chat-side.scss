@@ -34,10 +34,12 @@
     height: calc(100vh - 100px);
     padding: 20px;
    .group{
-     color: white;
-     margin-bottom: 40px;
-     text-decoration: none;
-     }
+    margin-bottom: 40px;
+   }
+    .group a{
+      color: white;
+      text-decoration: none;
+      } 
     .group__group-name {
       font-size: 15px;
       margin-bottom: 5px;
