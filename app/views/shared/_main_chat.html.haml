@@ -2,29 +2,31 @@
   .main-header
     .main-header__left-box
       %h.main-header__left-box__current-group
-        丸々盛盛
+        = @group.name
       %ul.main-header__left-box__member-list
         Member :
         %li__.main-header__left-box__member-list__member
-          name
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
 
     .main-header__right-box
-      =link_to "Edit",'#', class: "main-header__edit-btn"
+      =link_to "Edit",edit_group_path(@group), class: "main-header__edit-btn"
   
   .messages
+    =render @messages
     .messages__box
       .messages__box__upper-info
         .messages__box__upper-info__talker
-          YUTA
+          
         .messages__box__upper-info__date
-          2020/02/11(Tue) 19:24:00
+         
       .messages__box__text    
-        みんな食べるよ
+        
   .form
-    %form
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type:"text", class: "input-box__text", placeholder:"type a message"}
-        %label{class:"input-box__image"}
+        = f.text_field :content, class:"input-box__text",placeholder: "type a message"
+        =f.label :image ,class:"input-box__image" do
           = icon('fas','image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type:"submit", class:"submit-btn",value:"Send"}
+          = f.file_field :image ,class:"input-box__image__file"
+      = f.submit 'Send', class: "submit-btn"
