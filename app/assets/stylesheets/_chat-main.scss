@@ -24,7 +24,7 @@
    &__member-list{
      display: flex;
     font-size: 12px;
-    color: #999999;
+    color: red;
     margin-top: 15px;
    
    &__member{
@@ -82,9 +82,7 @@
   
   }
 
-  &__box{
-    padding-bottom: 40px;
-  }
+  
   
   .form {
   background-color: #d2d2d2;
