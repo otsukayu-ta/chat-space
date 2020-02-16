@@ -14,14 +14,7 @@
   
   .messages
     =render @messages
-    .messages__box
-      .messages__box__upper-info
-        .messages__box__upper-info__talker
-          
-        .messages__box__upper-info__date
-         
-      %p.messages__box__text    
-        
+    
   .form
     = form_for [@group, @message] do |f|
       .input-box
